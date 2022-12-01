@@ -3,6 +3,19 @@ package application;
 public abstract class Piece {
 	protected Position position;
 	protected boolean isWhite, isAlive;
+	
+	
+	public Piece(Position pos, boolean isWhite, boolean isAlive) {
+		this.position = pos;
+		this.isWhite = isWhite;
+		this.isAlive = isAlive;
+	}
+	public Piece(boolean isWhite, boolean isAlive) {
+		this.isWhite = isWhite;
+		this.isAlive = isAlive;
+	}
+	
+	
 	/**
 	 * @return the position
 	 */
@@ -18,27 +31,27 @@ public abstract class Piece {
 	/**
 	 * @return the isWhite
 	 */
-	public boolean isWhite() {
+	public boolean getIsWhite() {
 		return isWhite;
 	}
 	/**
 	 * @param isWhite the isWhite to set
 	 */
-	public void setWhite(boolean isWhite) {
+	public void setIsWhite(boolean isWhite) {
 		this.isWhite = isWhite;
 	}
 	/**
 	 * @return the isAlive
 	 */
-	public boolean isAlive() {
+	public boolean getIsAlive() {
 		return isAlive;
 	}
 	/**
 	 * @param isAlive the isAlive to set
 	 */
-	public void setAlive(boolean isAlive) {
+	public void setIsAlive(boolean isAlive) {
 		this.isAlive = isAlive;
 	}
 	
-	protected abstract boolean checkMove(Move move);
+	protected abstract boolean checkMove(Move move, ChessBoard b);
 }
