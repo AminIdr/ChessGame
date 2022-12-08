@@ -31,4 +31,8 @@ public class Knight extends Piece {
 			return false;
 		}
 	}
+	@Override
+	protected String getType() {
+		return "Knight";
+	}
 }

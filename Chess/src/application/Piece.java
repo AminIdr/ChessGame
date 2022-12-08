@@ -2,7 +2,7 @@ package application;
 
 public abstract class Piece {
 	protected Position position;
-	protected boolean isWhite, isAlive;
+	protected boolean isWhite, isAlive, hasMoved = false;
 	
 	
 	public Piece(Position pos, boolean isWhite, boolean isAlive) {
@@ -53,5 +53,15 @@ public abstract class Piece {
 		this.isAlive = isAlive;
 	}
 	
+	public boolean getHasMoved() {
+		return this.hasMoved;
+	}
+	
+	public void setHasMoved() {
+		this.hasMoved = true;
+	}
+	
 	protected abstract boolean checkMove(Move move, ChessBoard b);
+	protected abstract String getType();
+
 }
