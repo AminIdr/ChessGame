@@ -1,10 +1,22 @@
 package application;
 
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+
 public class Pawn extends Piece {
+	Image wp = new Image("wp.png");
+	Image bp = new Image("bp.png");
+	ImageView iv = new ImageView();
 	public Pawn(Position pos, boolean isWhite, boolean isAlive){
 		super(pos, isWhite, isAlive);
+		if (isWhite) {
+			iv.setImage(wp);
+		}
+		else {
+			iv.setImage(bp);
+		}
 	}
-	public Pawn( boolean isWhite, boolean isAlive){
+	public Pawn(boolean isWhite, boolean isAlive){
 		super(isWhite, isAlive);
 	}
 
